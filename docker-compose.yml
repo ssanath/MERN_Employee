@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  react-app:
+    build:
+      context: ./customer     # Updated to point to the customer directory
+      dockerfile: Dockerfile.customer
+    ports:
+      - "3000:80"             # Map port 80 in the container to port 3000 on the host
+    depends_on:
+      - api
+
+  api:
+    build:
+      context: ./server       # Updated to point to the server directory
+      dockerfile: Dockerfile.server
+    ports:
+      - "8003:8003"           # Map port 8003 in the container to port 8003 on the host
+    environment:
+      - MONGO_URI=mongodb+srv://sanath:apr26%402003@cluster0.zst7rqb.mongodb.net/mernstack?retryWrites=true&w=majority&appName=Cluster0
