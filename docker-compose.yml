@@ -16,4 +16,4 @@ services:
     ports:
       - "8003:8003"           # Map port 8003 in the container to port 8003 on the host
     environment:
-      - MONGO_URI=mongodb+srv://sanath:apr26%402003@cluster0.zst7rqb.mongodb.net/mernstack?retryWrites=true&w=majority&appName=Cluster0
+      - MONGO_URI=your_mongo_url
